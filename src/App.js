@@ -1,21 +1,24 @@
-import logo from './logo.svg'
-import './App.css'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { HistoryRouter, history } from './utils/history'
+import { lazy } from 'react'
+
+
+const NftMarket = lazy(() => import('./pages/NftMarket'))
+const PersonalProfile = lazy(() => import('./pages/PersonalProfile'))
+const Home = lazy(() => import('./pages/Home'))
 
 function App () {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>我是小游的同学，你好</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HistoryRouter history={history}>
+        <Routes>
+          <Route path='/' element={<Home />} >
+            <Route index element={<Navigate to="personalProfile" replace />} />
+            <Route path='personalProfile' element={<PersonalProfile />} />
+            <Route path='nftMarket' element={<NftMarket />} />
+          </Route>
+        </Routes>
+      </HistoryRouter>
     </div>
   )
 }

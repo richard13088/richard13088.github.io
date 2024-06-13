@@ -1,0 +1,32 @@
+.nft_market {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  //border: 2px solid red;
+  .connect_account {
+    border: 1px solid black;
+    font-size: 18px;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.nft_upload_modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wallet_button {
+  font-size: 18px;
+  width: 180px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
